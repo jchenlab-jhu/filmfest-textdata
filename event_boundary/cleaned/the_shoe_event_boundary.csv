@@ -1,0 +1,166 @@
+segment,name,start_time,boundary_prominence,onset
+1,title card,0.00.0,1.0,0
+2,shoe,0.07.1,1.0,7
+3,milk,0.25.7,2.0,26
+4,aggressive car man,0.48.0,2.0,48
+5,walk with woman,0.56.0,2.0,56
+6,impending doom,1.33.9,3.0,94
+7,death,1.39.2,1.0,99
+8,flying shoe,1.54.4,2.0,114
+9,shoes on ground,1.58.5,3.0,118
+1,Tapping shoe/foot,0.15.7,2.0,16
+2,Opening milk carton,0.25.8,1.0,26
+3,Man sees woman,0.45.9,1.0,46
+4,Another man shoos the first man away,0.51.9,2.0,52
+5,Woman copies man's movements,1.01.1,1.0,61
+6,Man copies woman's movements,1.27.4,1.0,87
+7,Man gets hit by car,1.39.9,1.0,100
+1,"A man leans against a car, drinking milk",0.47.9,1.0,48
+2, Another man chases him off the car,0.52.7,2.0,53
+3,The man almost trips,0.57.2,1.0,57
+4,The woman across the street imitates him ,1.01.0,2.0,61
+5,The man places his milk on the fence,1.08.9,2.0,69
+6,the woman imitates him ,1.10.9,3.0,71
+7,the man swings his arms and the woman follows,1.17.2,3.0,77
+8,The woman puts one jazz hand above head and another behind her,1.25.4,2.0,85
+9,The man imitates,1.27.4,3.0,87
+10,A car crashes into the man ,1.39.7,1.0,100
+11,The man's shoe lands on the side of the road ,2.00.7,1.0,121
+1,How They Get There,0.0.0,1.0,0
+2,Milk carton and drinking,0.25.7,1.0,26
+3,Woman walks by,0.45.9,2.0,46
+4,Man scares other man away from car,0.48.1,3.0,48
+5,Man trips and woman mirrors,0.56.8,2.0,57
+6,Man sets milk down and women mimics,1.8.2,1.0,68
+7,Man swings around while woman mirrors,1.14.6,3.0,75
+8,Woman hides and emerges in a pose,1.23.9,2.0,84
+9,Woman pretends to ache in pain and man follows,1.30.3,3.0,90
+10,Woman gasps playingly and Man follows,1.34.2,2.0,94
+11,"Woman tries to warn man of car coming, car crashes",1.37.1,1.0,97
+12,The car is wrecked and the man's shoes land on street,1.43.8,1.0,104
+1,Start of Movie,0.0.0,1.0,0
+2,Shoe is shown on the ground and taps,0.6.6,1.0,7
+3,Man is shown drinking milk,0.25.8,2.0,26
+4,Man notices woman walking down street,0.45.3,3.0,45
+5,Man starts to walk down the street,0.51.1,1.0,51
+6,Woman and man start copying each other's movements as they walk,0.59.4,2.0,59
+7,Woman sees car coming and tries to warn man,1.33.9,3.0,94
+8,"Man is hit by car, which goes off the road",1.39.4,1.0,99
+9,"Man's shoe ends up on the ground, alone ",1.59.0,1.0,119
+10,Another lonely shoe on the ground is shown,2.03.9,3.0,124
+1,Title Sequence,0.0.0,2.0,0
+2,Music Plays and Shoe taps to the beat,0.6.0,2.0,6
+3,Man drops snack wrapper,0.23.6,1.0,24
+4,man opens and drinks milk,0.25.6,1.0,26
+5,Man looks at woman,0.43.1,2.0,43
+6,car owner shooes man away,0.51.4,2.0,51
+7,man and woman mirror each other as they walk,0.54.4,2.0,54
+8,woman sees car and tries to get man to stop,1.33.7,2.0,94
+9,man crashes into car's windshield,1.39.2,1.0,99
+10,car flies into air and crashes on the street,1.43.2,1.0,103
+11,man's shoe flies into air and lands next to sidewalk,1.54.2,1.0,114
+12,another shoe next to road,2.02.4,2.0,122
+1,Beginning of movie and Title,0.0.0,1.0,0
+2,Shoe taps,0.6.7,1.0,7
+3,Man opens milk bottle as he leans against car,0.26.9,1.0,27
+4,Man drinks milk,0.39.4,1.0,39
+5,Man watches woman,0.45.9,2.0,46
+6,Man leaves car continuing to watch the woman,0.52.2,2.0,52
+7,Man and woman copy each other ,1.01.4,3.0,61
+8,Woman warns man of car,1.33.5,2.0,94
+9,Car crashes,1.39.5,1.0,100
+10,Shoe flies from air onto ground,1.54.7,1.0,115
+11,Shoes on ground,1.58.9,1.0,119
+12,End of movie,2.13.6,1.0,134
+1,very beginning,0.00.0,1.0,0
+2,the shoe,0.06.7,2.0,7
+3,milk,0.25.8,1.0,26
+4,got off the car,0.48.0,1.0,48
+5,mimics trip,0.59.2,1.0,59
+6,putting milk down,1.04.5,1.0,64
+7,swaying arms,1.14.1,1.0,74
+8,chicken,1.24.9,2.0,85
+9,old man,1.30.4,2.0,90
+10,tells him to stop,1.34.1,2.0,94
+11,hit by car,1.39.9,2.0,100
+12,flying shoe,1.54.5,1.0,114
+1,Beginning of movie,0.00.0,1.0,0
+2,Shoe appears on screen,0.06.9,1.0,7
+3,Shoe starts tapping,0.15.1,1.0,15
+4,man opens milk,0.25.8,3.0,26
+5,sees woman across street,0.49.9,2.0,50
+6,gets chased away by angry man,0.48.1,1.0,48
+7,man trips,0.56.8,3.0,57
+8,walks along with woman,0.59.1,1.0,59
+9,woman starts mocking him,1.00.9,2.0,61
+10,he starts mocking woman,1.27.2,3.0,87
+11,car approaches,1.32.2,1.0,92
+12,gets hit by car,1.39.7,1.0,100
+1,Shoe lays on ground,0.06.1,2.0,6
+2,A man wearing the shoe drinks milk,0.39.9,2.0,40
+3,He sees a woman at the other side of the sidewalk,0.46.4,1.0,46
+4,He trips,0.56.8,1.0,57
+5,She copies him,1.00.7,1.0,61
+6,She keeps copying him. They copy each other,1.05.2,1.0,65
+7,A car Is coming. He thinks she is playing,1.34.4,1.0,94
+8,He gets hit ,1.39.6,1.0,100
+9,His shoe lands near her,1.59.7,1.0,120
+1,"Old, dirty shoe",0.0.0,3.0,0
+2,Tapping feet ,0.24.0,3.0,24
+3,Nutrigrain wrapper,0.25.5,1.0,26
+4,Milk ,0.33.4,3.0,33
+5,Man's face,0.37.8,1.0,38
+6,Mirror,1.0.8,2.0,61
+7,Hit by car,1.38.6,1.0,99
+8,Car flips,1.44.7,2.0,105
+9,Flying shoe,1.58.1,1.0,118
+1,The very beginning of the movie,0.00.0,1.0,0
+2,Man eating and drinking on a car,0.24.9,1.0,25
+3,Owner of the car tells the man to get off,0.48.4,1.0,48
+4,Both the woman and man trip,0.57.9,2.0,58
+5,They imitate each other's actions,1.06.2,1.0,66
+6,A car is coming,1.34.7,1.0,95
+7,Man gets hit,1.40.5,1.0,100
+8,Car flips,1.44.5,1.0,104
+9,Shoes land onto the floor,1.54.7,2.0,115
+1,A shoe appears,0.6.3,1.0,6
+2,A man drinks a milk carton,0.25.5,1.0,26
+3,The man checks out a woman,0.45.9,1.0,46
+4,Another man forces the man with the milk to leave the car,0.51.9,1.0,52
+5,The man recognizes the woman immitated him,1.4.9,2.0,65
+6,Both immitate each other,1.10.9,2.0,71
+7,The woman recognizes the incoming car,1.34.0,1.0,94
+8,The man gets hit by the car,1.40.0,1.0,100
+9,The woman fliches ,1.42.5,1.0,102
+10,The car lands on the ground,1.49.7,2.0,110
+11,The man's shoe falls to the ground,1.54.7,1.0,115
+1,zoom in to shoe,0.07.9,1.0,8
+2,zoom in to man who wears shoe,0.34.7,2.0,35
+3,see woman walking,0.45.9,2.0,46
+4,woman begins imitating man,1.01.6,2.0,62
+5,man hit by car,1.39.7,1.0,100
+6,recurrence of shoe,1.59.5,1.0,120
+1,opening title scene,0.00.0,1.0,0
+2,A shoe appears and starts tapping to a song,0.06.7,1.0,7
+3,Man opens a milk carton and drinks from it,0.25.9,1.0,26
+4,"Woman walks by, man looks at her",0.46.1,1.0,46
+5,The man is yelled at by another man for leaning on his car,0.51.9,1.0,52
+6,"the man starts to walk away, and trips",0.55.6,1.0,56
+7,Woman copies the trip,1.01.4,1.0,61
+8,Woman copies the man putting down milk,1.11.1,1.0,71
+9,Woman copies the swinging arms,1.16.4,2.0,76
+10,Man copies woman walking funny,1.24.9,1.0,85
+11,Woman tries to warn man about approaching car,1.33.5,2.0,94
+12,"Car crashes into the man, and his shoe flies in the air",1.39.4,1.0,99
+1,Title Screen,0.02.6,1.0,3
+2,Shoe in the street,0.06.4,1.0,6
+3,Man leaning on car,0.26.1,1.0,26
+4,Woman copies tripping,0.59.6,2.0,60
+5,"Man places milk, woman copies",1.04.6,2.0,65
+6,Man swings arm,1.14.4,2.0,74
+7,the man swings his arms and the woman follows,1.17.2,3.0,77
+8,Woman ducks and jazz hands,1.23.4,2.0,83
+9,Man copies her,1.26.6,2.0,87
+10,Incoming Car,1.34.4,1.0,94
+11,The crash,1.39.7,1.0,100
+12,Shoe in the street again,1.54.4,2.0,114

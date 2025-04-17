@@ -1,0 +1,341 @@
+segment,name,start_time,boundary_prominence,onset
+1,Eating dinner,0.0.0,1.0,0
+2,Woman gets up to pour wine,0.33.9,1.0,34
+3,Man refuses wine,0.37.1,1.0,37
+4,Woman chugs glass of wine,0.54.8,1.0,55
+5,Woman pour another glass,1.5.5,2.0,66
+6,Woman throws wine at man,1.37.1,1.0,97
+7,Man lights a cigarette,1.50.5,1.0,110
+8,Woman comforts man on his lap,2.37.9,3.0,158
+9,Woman turns off switch on man's neck,2.54.1,1.0,174
+10,Woman sits and puts legs on table,3.17.8,2.0,198
+11,Woman researches on computer,3.37.1,1.0,217
+12,Woman speaks to customer service,3.48.1,1.0,228
+13,Woman looks at wedding photo,3.59.8,3.0,240
+14,Man sits at table with head down,4.15.7,2.0,256
+15,Woman orders a new man on the phone,4.30.8,2.0,271
+16,A loud knock on the door,4.52.1,1.0,292
+17,Two women deliver a large package,4.55.9,1.0,296
+18,Unwrap a man in plastic,5.2.1,1.0,302
+19,Woman stares at the man from the door,5.12.6,3.0,313
+20,The two women cart the old man out,5.25.2,1.0,325
+21,Woman asks them to wait in the elevator,5.35.6,2.0,336
+22,Woman kisses the man on the cart,5.40.4,1.0,340
+23,Woman takes off his wedding ring,5.41.1,1.0,341
+24,Woman places wedding ring on new man,5.47.6,2.0,348
+25,Woman turns on switch on new man,5.54.4,1.0,354
+26,Woman asks if he wants a glass of wine,6.13.7,1.0,374
+27,The conversation cycle repeats in reverse,6.29.6,1.0,390
+28,Man rubs woman's shoulders,6.48.2,2.0,408
+29,Woman chuckles and recounts her day,7.10.6,3.0,431
+30,Man switches off the woman's switch,7.18.7,1.0,439
+31,The woman stares blankly,7.28.4,1.0,448
+32,The man watches TV and lights a cigarette,7.34.9,1.0,455
+1,Start of movie,0.0.0,1.0,0
+2,Man and woman eat dinner in silence,0.10.8,1.0,11
+3,Woman tries to pour drink for man,0.32.9,3.0,33
+4,Conversation about asparagus,1.09.7,3.0,70
+5,Woman gets angry with man,1.36.7,2.0,97
+6,Man lights cigarettes,1.46.4,3.0,106
+7,Woman apologizes to man,2.27.4,2.0,147
+8,Woman sits on mans lap so she can turn him off,2.36.7,3.0,157
+9,Man is shut off,3.00.2,2.0,180
+10,"Woman browses internet for ""men""",3.20.5,1.0,200
+11,Woman calls company for new unit,3.41.8,2.0,222
+12,Woman describes her ideal man on the phone,4.23.8,3.0,264
+13,New unit arrives at door,4.51.8,1.0,292
+14,Old unit is taken away and she kisses him,5.25.4,3.0,325
+15,Woman turns on new unit,5.45.8,1.0,346
+16,New unit begins to move,6.01.2,3.0,361
+17,Woman and man begin to speak to each other,6.13.3,2.0,373
+18,"Conversation about asparagus, revised",6.21.5,2.0,382
+19,Man gets up to massag woman's shoulders,6.39.7,2.0,400
+20,Man shuts off woman,7.18.7,1.0,439
+21,Man sits on couch to watch tv and smoke,7.31.7,2.0,452
+1,man and woman eating dinner,0.15.1,1.0,15
+2,anniversary,0.47.6,1.0,48
+3,back to normal conversation,1.18.1,1.0,78
+4,poured wine on him argument,1.38.6,2.0,99
+5,began smoking,1.50.3,1.0,110
+6,woman appologies ,2.30.2,1.0,150
+7,switches him off,3.03.3,3.0,183
+8,tries to order a different man,3.54.1,1.0,234
+9,someone knocking,3.54.4,1.0,234
+10,unraps a new man,5.12.4,1.0,312
+11,wheeled away old man ,5.30.2,1.0,330
+12,takes the ring,5.44.4,1.0,344
+13,turns the new man on,6.02.0,1.0,362
+14,same conversation as before,6.31.7,1.0,392
+15,gives her a massage,6.51.5,1.0,412
+16,turns her off ,7.22.2,3.0,442
+17,"grabs a beer, smokes, and watches tv",7.42.7,1.0,463
+1,beginning of movie,0.00.0,1.0,0
+2,"""high maintenance"" and music",0.05.2,2.0,5
+3,eating dinner,0.11.4,1.0,11
+4,woman offers wine and man rejects,0.33.6,2.0,34
+5,annoyed talking,0.45.7,2.0,46
+6,woman chugs wine and gets more,0.54.9,2.0,55
+7,asparagus is tender,1.10.7,2.0,71
+8,woman throws wine and yells at him,1.36.9,2.0,97
+9,man smokes,1.48.9,2.0,109
+10,woman gives up trying to stop and insults him,2.03.3,2.0,123
+11,woman apologizes and hugs him,2.29.5,1.0,150
+12,woman turns off his power switch,2.59.1,2.0,179
+13,"""Happy anniversary""",3.08.1,2.0,188
+14,Googling Prometeus Robotics,3.20.5,1.0,200
+15,Finding Paul,3.36.5,1.0,216
+16,Speaking with tech support,3.38.9,2.0,219
+17,Paul arrives,4.52.9,1.0,293
+18,Delivery women take old boyfriend,5.25.3,2.0,325
+19,woman tells them to wait,5.34.9,3.0,335
+20,Woman kisses old bf and takes ring,5.38.9,1.0,339
+21,gives new bf ring and turns on,5.45.8,1.0,346
+22,Man takes in surroundings and starts eating,6.00.9,2.0,361
+23,woman offers wine and man rejects,6.14.0,2.0,374
+24,asparagus is tender,6.21.8,2.0,382
+25,man gives woman shoulder rub,6.40.5,2.0,400
+26,man powers woman off,7.19.3,3.0,439
+27,"man smokes, grabs beer, and watches tv",7.35.0,3.0,455
+1,The very beginning of the movie,0.00.0,1.0,0
+2,At the dining room table,0.11.1,1.0,11
+3,Woman gets up to pour the drink for the man,0.33.2,3.0,33
+4,Woman quickly finishes her drink,0.54.4,3.0,54
+5,Man talks about the food and starts a conversation,1.11.5,2.0,72
+6,Woman gets angry at the man,1.37.5,1.0,98
+7,Man starts smoking,1.51.0,2.0,111
+8,Woman comforts the man,2.33.3,2.0,153
+9,Woman turns off the man,2.49.4,1.0,169
+10,Goes on her computer to search for robots,3.21.1,1.0,201
+11,She calls the company to buy a new robot,3.44.1,1.0,224
+12,Describing her ideal robot,4.26.6,2.0,267
+13,Robot's arrival,4.52.4,1.0,292
+14,Final goodbyes to the old robot,5.34.7,2.0,335
+15,Eating dinner with the new robot,5.57.0,1.0,357
+16,Robot massages the woman,6.48.5,2.0,408
+17,The new robot turns off the woman as she is also a robot,7.18.3,1.0,438
+18,The new robot goes to watch the television,7.32.3,3.0,452
+1,Couple eating comes into view,0.11.8,3.0,12
+2,Man rejects a cup of wine,0.36.9,1.0,37
+3,They engage in a conversation - It's their anniversary,0.45.4,1.0,45
+4,She shouts at him to relax,1.36.9,1.0,97
+5,She pours wine on him,1.37.7,1.0,98
+6,He starts to smoke,1.50.7,2.0,111
+7,She takes the cigarette from him,1.55.5,1.0,116
+8,He lights another one,1.59.2,1.0,119
+9,She tells him how disappointed she is about the way the anniversary is going,2.06.0,1.0,126
+10,She shuts him down/ switches him off,3.00.5,1.0,180
+11,She orders a new robot,3.45.7,1.0,226
+12,The robot arrives,4.52.0,1.0,292
+13,She turns him on,6.01.7,1.0,362
+14,They engage in a conversation,6.17.0,1.0,377
+15,He turn her off,7.20.3,2.0,440
+16,He starts to smoke,7.33.0,2.0,453
+17,He turns on the television ,7.36.4,2.0,456
+1,Man and woman at dinner,0.11.1,1.0,11
+2,Man refuses drink,0.33.4,1.0,33
+3,Asparagus is an aphrodisiac,1.10.4,2.0,70
+4,Woman throws drink on man,1.34.2,1.0,94
+5,Man smokes cigarettes,1.46.9,2.0,107
+6,Woman insults man,2.02.5,2.0,122
+7,Woman comforts man,2.27.0,1.0,147
+8,Woman turns man off,2.48.6,2.0,169
+9,Woman requests a different robot,3.20.5,1.0,200
+10,New robot is delivered,4.52.1,1.0,292
+11,Old robot is removed,5.22.7,2.0,323
+12,Woman turns new robot on,5.42.9,1.0,343
+13,New man and woman at dinner,6.08.0,3.0,368
+14,New man refuses drink,6.13.0,2.0,373
+15,Asparagus is an aphrodisiac (again),6.21.0,3.0,381
+16,Man massages woman,6.47.7,2.0,408
+17,Man turns woman off,7.19.0,1.0,439
+1,Beginning of clip,0.00.0,1.0,0
+2,title page,0.1.6,1.0,2
+3,Dinner eating,0.10.6,1.0,11
+4,Woman offers wine and man decline,0.33.5,2.0,34
+5,Conversation about anniversary,0.44.9,1.0,45
+6,Two fights and woman throws wine at man,1.36.9,1.0,97
+7,man smokes ,1.50.4,1.0,110
+8,Woman apologize,2.29.0,1.0,149
+9,Woman turns the man robot off,3.00.0,1.0,180
+10,woman uses laptop to look for a new robot,3.20.5,1.0,200
+11,woman orders a new robot and describes new characteristics,2.41.6,2.0,162
+12,new robot arrives,4.53.6,1.0,294
+13,woman kiss the old robot goodbye,5.33.8,2.0,334
+14,Woman turns on the new robot,5.47.2,2.0,347
+15,second dinner scene with new robot,6.08.5,1.0,368
+16,new robot approach and gives massage,6.41.7,2.0,402
+17,new robot turns the woman off,7.19.0,1.0,439
+18,new robot start to smoke and watch tv,7.35.3,2.0,455
+1,"Title screen ""high maintenance""",0.00.0,1.0,0
+2,Couple having dinner,0.11.2,1.0,11
+3,"woman gets up to fill mans wine, but he says no",0.33.7,2.0,34
+4,"woman says its their anniversary, he responds he can't drink when on call",0.45.4,2.0,45
+5,woman downs some wine,0.53.4,1.0,53
+6,talk abt asparagus,1.10.5,2.0,70
+7,woman gets mad and tells him to have a drink,1.36.9,1.0,97
+8,he starts smoking,1.50.5,1.0,110
+9,she sits on his lap and comforts him after mentioning bad sex,2.34.6,1.0,155
+10,she turns him off,2.59.1,1.0,179
+11,she starts shopping for other men,3.22.1,2.0,202
+12,"she says 100 series is boring so she asks for a better model, and specifications",3.45.6,1.0,226
+13,the new model arrives,4.58.2,1.0,298
+14,"she kisses old model goodbye, and removes his ring to put on new model",5.34.5,2.0,334
+15,"new model awakes and can't drink wine, comments on asparagus",5.55.5,1.0,356
+16,he starts to massage her as she tells him abt her day,6.46.6,1.0,407
+17,he turns her off,7.18.8,1.0,439
+18,"he starts to smoke, then watch tv",7.32.9,1.0,453
+1,Title Sequence,0.0.0,1.0,0
+2,Man and Woman eat in silence,0.10.8,1.0,11
+3,Man rejects alcohol from woman,0.32.4,1.0,32
+4,Man and Woman talk about asparagus ,1.09.9,1.0,70
+5,Woman gets angry at man for not being relaxed,1.33.7,1.0,94
+6,Man smokes first cigarette,1.46.4,1.0,106
+7,Man smokes second cigarette,1.58.2,1.0,118
+8,Woman complains about anniversary,2.02.2,1.0,122
+9,Woman turns off boyfriend,2.26.7,3.0,147
+10,Woman returns to seat,3.12.8,2.0,193
+11,Woman looks online for new partner,3.20.3,1.0,200
+12,Woman calls company to order new partner,3.38.6,1.0,219
+13,New partner delivered and unboxed,4.51.9,1.0,292
+14,Woman watches old partner be carried away,5.20.7,2.0,321
+15,moves wedding ring from old to new partner,5.34.2,1.0,334
+16,Woman turns on new partner,5.53.9,1.0,354
+17,Man rejects alcohol from woman,6.14.0,1.0,374
+18,Man and Woman talk about asparagus ,6.21.0,1.0,381
+19,Man massages woman while asking about her day,6.39.5,3.0,400
+20,man turns woman off,7.18.3,1.0,438
+21,man smokes cigarette and watches tv,7.28.5,1.0,448
+1,title card,0.00.0,1.0,0
+2,dinner,0.10.8,1.0,11
+3,refusal of wine 1,0.37.5,2.0,38
+4,asparagus 1,1.10.2,3.0,70
+5,angry outburst,1.34.0,3.0,94
+6,smoking,1.46.7,2.0,107
+7,angry rant,2.05.2,3.0,125
+8,shutting him down,2.33.5,3.0,154
+9,break after shutting down,3.12.8,1.0,193
+10,shopping for new boyfriend,3.20.5,1.0,200
+11,shop for paul,3.37.3,3.0,217
+12,paul is delivered,4.50.1,1.0,290
+13,goodbye to old boyfriend,5.25.2,3.0,325
+14,"""marries"" new boyfriend",5.46.4,3.0,346
+15,refusal of wine 2,5.57.0,1.0,357
+16,asparagus 2,6.21.3,3.0,381
+17,tell about day,6.48.8,3.0,409
+18,turn off,7.18.8,2.0,439
+1,Title Screen,0.00.0,1.0,0
+2,First scene after title screen,0.11.1,1.0,11
+3,Change of mood,1.36.9,2.0,97
+4,Change of mood,2.26.0,2.0,146
+5,Shut down,2.53.5,2.0,174
+6,Contemplating,3.18.3,2.0,198
+7,Using a laptop,3.20.6,1.0,201
+8,Satisfaction,3.36.6,2.0,217
+9,Making a call,3.40.3,2.0,220
+10,Decision making,4.27.6,2.0,268
+11,Delivery is here,4.52.0,1.0,292
+12,Sees new model/face,5.08.4,2.0,308
+13,Contemplating,5.17.4,1.0,317
+14,New Loyalty,5.46.3,2.0,346
+15,Turned on,6.03.3,1.0,363
+16,Repeat dinner scene,6.38.4,2.0,398
+17,Massage,6.51.1,2.0,411
+18,Trust,7.06.6,2.0,427
+19,Shut down,7.19.3,2.0,439
+20,Man takes over the house,7.35.3,1.0,455
+1,Beginning of movie,0.0.0,1.0,0
+2,Title screen ,0.5.4,1.0,5
+3,Man and woman eating dinner,0.12.4,2.0,12
+4,Woman tries to give man some wine,0.32.9,2.0,33
+5,Talk about anniversary,0.45.2,3.0,45
+6,Woman drinks wine,0.53.9,1.0,54
+7,Talk about asparagus,1.09.9,2.0,70
+8,Woman gets mad at man ,1.36.9,1.0,97
+9,Man smokes and woman gets angry,1.46.7,1.0,107
+10,Woman yells at man again,2.03.7,1.0,124
+11,Woman apologizes,2.27.5,1.0,148
+12,Woman turns man's button off,2.53.3,1.0,173
+13,Woman looks on website for another man ,3.20.8,1.0,201
+14,Woman calls to buy another guy,3.44.4,1.0,224
+15,Woman talks about her preferences,4.14.4,1.0,254
+16,New unit arrives,4.52.4,1.0,292
+17,Original man is taken away,5.25.5,2.0,326
+18,Woman takes off ring and turns new man on,5.43.2,2.0,343
+19,Woman has dinner with new man,5.58.7,1.0,359
+20,Man talks about asparagus,6.21.5,2.0,382
+21,Man gives woman a massage with conversation,6.46.7,2.0,407
+22,Man turns off woman's button,7.18.8,1.0,439
+23,Man relaxes on couch,7.29.1,1.0,449
+24,End of clip,7.49.4,1.0,469
+1,High maintenance,0.5.4,1.0,5
+2,A couple appears,0.11.1,1.0,11
+3,The man rejects a wine offer,0.37.2,1.0,37
+4,The woman finishes her glass,0.54.0,1.0,54
+5,The woman makes a comment,1.13.2,1.0,73
+6,The man doesn't understand,1.21.5,1.0,82
+7,The woman rages,1.37.0,1.0,97
+8,The man smokes,1.48.0,1.0,108
+9,The woman insults the man,2.4.0,2.0,124
+10,The man's facial expression changes,2.18.7,1.0,139
+11,The woman regrets her words,2.20.2,2.0,140
+12,The woman hugs the man,2.36.5,1.0,156
+13,The woman turns off the switch ,2.59.6,1.0,180
+14,The woman stares at him,3.13.8,2.0,194
+15,The woman searches for a different model,3.21.3,1.0,201
+16,The woman found what she likes,3.37.1,1.0,217
+17,A phone call,3.39.4,1.0,219
+18,The woman says her perferance,4.16.6,3.0,257
+19,A door knock,4.51.9,1.0,292
+20,Delivery ,4.55.4,1.0,295
+21,Unboxing,5.2.7,2.0,303
+22,Drags the first model,5.25.5,1.0,326
+23,Kisses the first model,5.39.7,1.0,340
+24,Takes the ring away,5.43.0,1.0,343
+25,Turns on the new model,5.54.7,1.0,355
+26,The man rejects a wine offer,6.16.3,1.0,376
+27,The man comments what the woman previously said,6.29.3,1.0,389
+28,The man caresses the woman,6.48.3,1.0,408
+29,The woman is feeling his touch,6.51.8,3.0,412
+30,The man turns off her switch,7.18.8,1.0,439
+31,The man smokes and turns the TV on,7.35.3,2.0,455
+1,Beginning of the movie,0.0.0,1.0,0
+2,The couple at the table,0.10.9,1.0,11
+3,Woman gets up,0.33.5,1.0,34
+4,"Man speaks, says not for me",0.37.2,2.0,37
+5,Woman drinks wine,0.53.4,3.0,53
+6,Start talking about asparagus,1.10.4,2.0,70
+7,Woman throws wine on man,1.36.7,1.0,97
+8,Man starts smoking,1.50.5,2.0,110
+9,Woman starts complaining,2.06.0,2.0,126
+10,Woman apologizes,2.29.8,2.0,150
+11,Woman flips man's switch,2.59.3,1.0,179
+12,Change in scene,3.21.3,1.0,201
+13,Woman calls manufacturer,3.44.1,2.0,224
+14,"Change in scene,  knocking on door",4.52.2,1.0,292
+15,Women rolling old robot out,5.25.4,1.0,325
+16,Woman stops the workers,5.35.9,2.0,336
+17,Woman turns new robot on,5.54.7,1.0,355
+18,Robot repeats old robot,6.21.5,1.0,382
+19,Robot gets up and walks behind woman,6.48.8,1.0,409
+20,Male robot turns female off,7.19.3,1.0,439
+21,Male starts smoking/watchting tv,7.30.8,2.0,451
+1,Beginning of the movie,0.01.6,1.0,2
+2,man and woman having dinner,0.10.9,1.0,11
+3,Woman tries to give husband wine and he refuses,0.37.1,2.0,37
+4,Woman guzzles alcohol to show displeasure ,0.54.4,2.0,54
+5,The woman throws wine on her husband,1.37.4,1.0,97
+6,The man starts smoking,1.50.4,1.0,110
+7,The woman apologizes for her comment ,2.28.6,1.0,149
+8,She turns her husband off,2.58.6,1.0,179
+9,The woman looks at new husbands on her computer,3.24.9,1.0,205
+10,She calls the company,3.44.1,2.0,224
+11,She lists her preferences ,4.35.1,3.0,275
+12,The husband is delivered ,4.52.8,1.0,293
+13,They take the old husband away,5.25.4,2.0,325
+14,The woman kisses the husband before he leaves,5.39.5,2.0,340
+15,She transfer the old husband's ring to the new husband ,5.43.0,3.0,343
+16,She turns the new husband on,5.54.2,1.0,354
+17,The woman offers the new husband a glass of wine  and he refuses,6.14.5,2.0,374
+18,The new husband gives the woman a massage,6.48.0,1.0,408
+19,The new husband turns the woman off. ,7.20.0,1.0,440
+20,The man llights a cigarette and watches TV,7.32.7,1.0,453

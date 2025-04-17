@@ -1,0 +1,304 @@
+segment,name,start_time,boundary_prominence,onset
+1,Car approaches building,0.08.7,2.0,9
+2,"“Keith Reynolds can't make it tonight""",0.17.2,1.0,17
+3,Keith Reynolds is introduced,0.42.9,1.0,43
+4,Keith Reynolds enters the elevator,0.53.5,3.0,54
+5,Keith Reynolds arrives at the fourth floor,1.00.0,2.0,60
+6,Keith Reynolds heads to the eighth floor,1.35.5,1.0,96
+7,Keith Reynolds is denied the promotion,1.59.0,2.0,119
+8,Patrick Campbell joins Keith Reynolds in the elevator,2.42.6,1.0,163
+9,Keith Reynolds picks a fight with Patrick Campbell,2.53.9,2.0,174
+10,Keith Reynolds drags Patrick's body down the stairs,3.43.1,2.0,223
+11,Sarah bumps into Keith Reynolds on the fifth floor,4.44.8,1.0,285
+12,Keith Reynolds goes down the ladder,5.16.3,2.0,316
+1,Start of movie,0.0.0,1.0,0
+2,Man drives up to tall building,0.7.7,1.0,8
+3,Keith enters building hopeful of new promotion,0.47.5,2.0,48
+4,Keith sees Sarah and makes her a cup of coffee,1.00.6,1.0,61
+5,The man outside fall off ladder and Bill calls 911,1.21.5,2.0,82
+6,Keith eagerly goes up to his boss's office ,1.35.3,3.0,95
+7,Patrick sees Sarah and tells him he got promotion,1.54.5,1.0,114
+8,Keith doesn't get the promotion,2.04.1,1.0,124
+9,Keith sees Sarah and Patrick kissing,2.19.0,1.0,139
+10,Keith and Patrick have an altercation,2.58.0,1.0,178
+11,Keith realizes that he has killed Patrick and decides to hide the body,3.25.4,2.0,205
+12,Ruth takes the stairs to the 7th floor,3.30.4,3.0,210
+13,"Ruth sees Keith with the body and passes out on the stairs, hitting her head",3.58.4,1.0,238
+14,Sarah sees Keith and Patrick and passes out,4.44.8,1.0,285
+15,Keith drags Patrick outside on a ladder,5.13.8,3.0,314
+16,Keith balances on the ladder and has an existential realization,5.20.8,2.0,321
+1,Title Sequence,0.0.0,1.0,0
+2,Keith drives to work,0.07.7,1.0,8
+3,Keith prepares to go into the building,0.16.7,2.0,17
+4,introduction to keith/the day,0.41.7,1.0,42
+5,Introduction to sarah,1.01.0,1.0,61
+6,someone falls past window,1.15.5,2.0,76
+7,patrick receives promotion while keith thinks about getting one,1.34.0,1.0,94
+8,patrick goes to tell sarah about promotion,1.48.0,1.0,108
+9,Keith doesn't get promotion,1.57.1,2.0,117
+10,keith catches patrick and sarah kissing,2.06.1,1.0,126
+11,keith murders patrick in the elevator,2.31.6,2.0,152
+12,Ruth decides to take stairs to bathroom,3.29.4,1.0,209
+13,Keith also decides to take the stairs,3.41.4,1.0,221
+14,Ruth and Keith meet on the stairs,3.53.2,1.0,233
+15,Ruth dies,4.08.5,1.0,248
+16,Sarah decides to visit patrick,4.19.2,2.0,259
+17,Keith decides to climb down ladder ,4.28.5,1.0,268
+18,Sarah sees Keith with Patrick's dead body,4.44.7,1.0,285
+19,Sarah faints,5.02.5,1.0,302
+20,Keith has revelation,5.12.0,2.0,312
+21,Keith and Custodial worker see each other,5.37.3,1.0,337
+1,Keith drives up to work in blue car,0.9.4,3.0,9
+2,Keith offers Sara coffee,1.16.3,3.0,76
+3,Sara dumps coffee out window,1.21.6,3.0,82
+4,Patrick tells Sara about promotion,1.56.9,3.0,117
+5,Boss tells Keith the promotion was given to someone else,2.5.3,2.0,125
+6,Keith goes to see Sara,2.13.6,2.0,134
+7,Keith sees Sara and Patrick kissing,2.19.9,2.0,140
+8,Keith kills Patrick,3.26.7,1.0,207
+9,Keith takes stairs with body,3.49.7,1.0,230
+10,Ruth sees him and faints,4.8.0,2.0,248
+11,Patrick tries to take body down using ladder,4.34.0,2.0,274
+12,Sara sees keith with body and faints,4.47.5,2.0,288
+13,Keith sees janitor from ladder,5.43.6,2.0,344
+1,Opening title scene,0.00.0,1.0,0
+2,A car drives to a building,0.07.7,1.0,8
+3,Text keith can not make it tonight,0.17.4,1.0,17
+4,"Blue man gets out of car, into building for promotion day",0.21.0,1.0,21
+5,Goes to fourth floor in elevator,0.55.1,1.0,55
+6,"Sarah drops coffee after keith gives it to her, and drops it",1.07.8,2.0,68
+7,the HR guy calls an ambulance,1.24.8,1.0,85
+8,keith confidently goes to see if he got the promotion,1.35.6,1.0,96
+9,patrick campbell goes to tell sarah abt his good news,1.49.4,2.0,109
+10,keith finds out he didn't get the promotion,1.59.4,2.0,119
+11,keith finds sarah and patrick kissing,2.20.1,1.0,140
+12,"keith says three words to patrick, then kills him",2.55.7,1.0,176
+13,"ruth decides to use stairs, so does keith",3.30.9,2.0,211
+14,"ruth/keith run into each other on the stairs, she faints and dies",3.59.5,1.0,240
+15,"Sarah goes up and sees keith with patrick, she faints but lives",2.20.3,2.0,140
+16,keith accidently drops patrick,5.20.8,2.0,321
+17,Keith and barry look at each other,5.41.1,2.0,341
+1,Very beginning of the movie,0.0.0,1.0,0
+2,Car rolls in,0.09.4,1.0,9
+3,Title page,0.19.4,1.0,19
+4,Keith gets out of car and gets his hat,0.27.4,1.0,27
+5,"Keith enters building, gets on the elevator to go to fourth floor",0.48.9,1.0,49
+6,Keith offers to make Sarah a cup of coffee and she throws it out,1.13.0 ,2.0,73
+7,Bill sees someone fall down outside the window and calls ambulance,1.25.7,1.0,86
+8,Keith imagines his promotion but does not get it,1.37.2,2.0,97
+9,Keith sees Patrick and Sarah Kissing,2.17.5,1.0,138
+10,Patrick gets on the elevator with Keith ,2.41.3,1.0,161
+11,Keith and Patrick fights and Keith murders Patrick,2.57.5,1.0,178
+12,Ruth wants to go to bathroom,3.30.9,2.0,211
+13,Ruth goes up the stairs for her new years' resolution,3.41.4,2.0,221
+14,Keith decides to go down the stairs instead of elevator and meets Ruth,3.45.2,1.0,225
+15,Ruth sees Keith dragging patrick's body down the stairs,4.00.0,1.0,240
+16,Ruth faints and roll down the stairs (possibly dead),4.09.9,2.0,250
+17,Sarah misses Patrick and decides to go up to Patrick's body,4.21.1,1.0,261
+18,Sarah sees Keith dragging Patrick's body,4.46.7,1.0,287
+19,Keith daydreams about Sarah confessing her love for him,4.51.5,1.0,292
+20,Sarah faints,5.03.0,1.0,303
+21,Keith goes down the ladder,5.16.2,1.0,316
+22,Keith realizes that other people also want more in their life like he does,5.21.0,2.0,321
+23,Keith looks at the building from outside and sees someone he's never seen before,5.40.2,2.0,340
+24,Barry who was mopping the floor sees keith standing outside on a ladder,5.48.6,1.0,349
+1,Very beginning,0.00.0,1.0,0
+2,Keith pulls up to office,0.07.7,1.0,8
+3,"""Keith Reynolds can't make it tonight""",0.17.2,1.0,17
+4,Keith goes in,0.20.6,1.0,21
+5,Keith sees Sara,1.01.0,2.0,61
+6,Bill sees guy fall,1.24.9,2.0,85
+7,Keith goes to boss,1.35.3,2.0,95
+8,Patrick sees Sara,1.48.8,2.0,109
+9,Keith doesn't get promotion,1.57.5,2.0,118
+10,Keith watches Patrick and Sara kiss,2.20.0,2.0,140
+11,Keith murders Patrick,2.52.4,2.0,172
+12,Ruth heads to bathroom,3.30.5,2.0,210
+13,Keith takes Patrick's body,3.42.6,2.0,223
+14,Ruth sees Keith with Patrick,3.59.4,3.0,239
+15,Sara goes to see Patrick,4.19.4,2.0,259
+16,Keith decides to take Patrick on ladder,4.28.1,2.0,268
+17,Sara sees Keith with Patrick,4.45.0,2.0,285
+18,Keith takes Patrick on ladder,5.08.3,3.0,308
+19,Keith's realization,5.20.6,2.0,321
+20,Bob sees Keith on ladder,5.45.8,1.0,346
+1,Keith approaches office in car,0.0.0,1.0,0
+2,Enters office,0.46.8,1.0,47
+3,Takes elevator up to see Sarah,1.0.4,1.0,60
+4,Keith makes Sarah a coffee,1.8.6,2.0,69
+5,Bill sees someone fall outside the window,1.24.7,3.0,85
+6,Keither takes elevator up to boss's office,1.42.7,2.0,103
+7,Patrick goes down to tell Sarah news,1.49.6,2.0,110
+8,Keith does not receive promotion,2.5.6,1.0,126
+9,Keith arrives on Sarah's floor while she kisses Patrick,2.19.1,1.0,139
+10,Patrick enters elevator with Keith,2.42.7,2.0,163
+11,Keith insults Patrick as he exits the elevator,2.56.3,3.0,176
+12,Patrick punches Keith in the elevator,3.8.7,1.0,189
+13,Keith kills Patrick in the elevator,3.27.5,1.0,208
+14,Ruth begins to walk up stairs to go to the bathroom,3.31.1,2.0,211
+15,Keith drags Patrick's body to the stairs,3.49.2,2.0,229
+16,Ruth runs into Keith on the stairs and faints,4.0.2,1.0,240
+17,Ruth falls down the stairs and dies,4.10.2,1.0,250
+18,Sarah takes files to Patrick's office to see him again,4.19.9,1.0,260
+19,Keith decides to climb down the ladder outside the window,4.32.5,2.0,272
+20,Sarah sees Keith dragging Patrick to the window,4.45.5,1.0,286
+21,Sarah faints out of shock,5.4.1,3.0,304
+22,Keith tugged Patrick's body through the window to the ladder,5.15.3,2.0,315
+23,Keith contemplates his life and stares at the office building,5.27.5,3.0,328
+24,The janitor sees Patrick out the window,5.47.6,1.0,348
+1,title card,0.00.0,1.0,0
+2,car drive,0.07.7,1.0,8
+3,leave car,0.20.8,1.0,21
+4,return to car,0.29.5,3.0,30
+5,hat walk away/intro to keith,0.37.3,2.0,37
+6,elevator,0.53.5,3.0,54
+7,intro to sarah,1.01.0,2.0,61
+8,coffee making,1.11.0,3.0,71
+9,coffee poured,1.21.6,1.0,82
+10,bill sees falling man,1.30.3,2.0,90
+11,patrick goes to sarah,1.52.6,2.0,113
+12,no promotion for keith,1.57.8,2.0,118
+13,keith sees them,2.19.8,1.0,140
+14,keith kills patrick,2.53.4,1.0,173
+15,"ruth goes up stairs, keith down",3.30.7,1.0,211
+16,ruth dies,3.58.7,1.0,239
+17,sarah goes to find patrick,4.19.3,1.0,259
+18,keith thinks of using ladder,4.28.3,3.0,268
+19,sarah sees keith,4.46.0,1.0,286
+20,keith on ladder,5.20.3,1.0,320
+1,The very beginning of the movie,0.00.0,1.0,0
+2,Stick figure leaving his car,0.21.0,1.0,21
+3,Keith Reynolds entering the building,0.44.0,3.0,44
+4,Keith on the 4th floor,1.01.5,1.0,62
+5,Keith offering a coffee to Sarah,1.15.1,3.0,75
+6,Sarah dumps coffee on a person and he falls,1.22.6,1.0,83
+7,Bill sees someone falling,1.24.1,2.0,84
+8,Patrick going to talk to Sarah,1.53.4,1.0,113
+9,Keith sees Patrick kissing Sarah,2.21.4,1.0,141
+10,Keith and Patrick fight,2.58.7,1.0,179
+11,Keith kills Patrick,3.28.2,1.0,208
+12,Ruth takes the stairs,3.30.1,2.0,210
+13,Ruth faints when she sees the body,4.10.2,3.0,250
+14,Sarah sees Keith and the body,4.47.0,2.0,287
+15,Drops Patrick's body out the window,5.20.8,2.0,321
+16,Keith hanging on the pole,5.22.6,2.0,323
+17,Barry sees Keith outside the window,5.47.8,2.0,348
+1,Title,0.03.2,3.0,3
+2,A view of a car driving on a road to building,0.09.4,3.0,9
+3,Guy gets out of car,0.21.9,2.0,22
+4,Narrators voice - introduces the man as Keith Reynolds ,0.42.9,1.0,43
+5,It's promotion day,0.45.3,1.0,45
+6,Keith enters the elevator,0.53.3,2.0,53
+7,Keith gets off the elevator,1.01.5,2.0,62
+8,"Narrator introduces Keith's crush, Sarah",1.05.1,1.0,65
+9,Keith makes coffeee for her. She pours it out the window and it falls on a man climbing a ladder,1.11.2,2.0,71
+10,Patrick goes and kisses Sarah,1.52.3,2.0,112
+11,Keith didn't get the promotion (Patrick did). ,2.01.0,1.0,121
+12,Keith sees Sarah and Patrick,2.18.4,1.0,138
+13,Patrick enters the elevator,2.41.4,1.0,161
+14,Keith insults Patrick ,2.57.4,1.0,177
+15,Patrick confronts and fights Keith,3.04.1,1.0,184
+16,Keith retaliates and kills Patrick,3.11.7,1.0,192
+17,A lady is walking up the syairs,3.33.4,2.0,213
+18,Keith is dragging the body down the stairs ,3.42.9,1.0,223
+19,She sees him and falls down the stairs from shock. She dies,4.07.7,1.0,248
+20,Keith decides to carry Patrick's body down the ladder,4.34.5,1.0,274
+21,Sarah sees Keith ,4.46.0,1.0,286
+22,She faints,5.02.3,1.0,302
+23,Keith muses,5.20.8,1.0,321
+24,"He takes a last look at the building, sees Barry",5.37.6,1.0,338
+1,Keith Reynolds drives into work ,0.23.4,1.0,23
+2,Keith offers Sarah a coffee,1.15.4,2.0,75
+3,Sarah throws the coffee out the window onto the worker,1.21.7,2.0,82
+4,Patrick goes downstairs to tell Sarah about his promotion,1.57.2,1.0,117
+5,Keith doesn't get a promotion ,2.03.4,1.0,123
+6,Keith sees Patrick kissing Sarah,2.22.4,2.0,142
+7,Patrick gets in the elevator with Keith ,2.42.4,3.0,162
+8,They begin fighting ,3.08.9,1.0,189
+9,Keith realizes he killed Patrick ,3.26.2,1.0,206
+10,Ruth sees Keith on the stairs with patrick's body,4.01.0,1.0,241
+11,Ruth faints and dies,4.10.5,1.0,250
+12,Keith decides to take the ladder,4.34.2,1.0,274
+13,Sarah sees Keith dragging Patrick ,4.46.5,1.0,286
+14,Sarah faints,5.04.0,2.0,304
+15,Keith is hung on the ladder,5.28.5,1.0,328
+16,Keith sees the janitor ,5.43.2,2.0,343
+1,A car approaches the building,0.7.9,1.0,8
+2,"""Keith can't make it tonight""",0.17.4,1.0,17
+3,Keith's introduction,0.20.7,1.0,21
+4,Keith makes a coffee for Sarah,1.4.5,2.0,64
+5,A man falls from the building ,1.22.8,2.0,83
+6,Keith goes up ,1.35.3,1.0,95
+7,Patrick gets a promotion and tells Sarah,1.49.1,1.0,109
+8,Keith's promotion is not happening,1.57.9,1.0,118
+9,Sarah hugs Patrick,2.6.4,1.0,126
+10,Keith goes down to meet Sarah,2.9.9,1.0,130
+11,Sarah kisses Patrick,2.19.4,1.0,139
+12,Patrick gets on the elevator with Keith,2.43.9,2.0,164
+13,Patrick gets angry,3.0.2,2.0,180
+14,Keith fights back,3.10.7,1.0,191
+15,Keith Kills Patrick,3.25.2,2.0,205
+16,Ruth introduction,3.30.9,1.0,211
+17,Keith takes the stairs,3.42.9,1.0,223
+18,Ruth falls from the stairs and dies,3.54.5,1.0,234
+19,Sarah misses Patrick,4.19.2,1.0,259
+20,Keith drags Patrick to the window,4.28.3,1.0,268
+21,Security introduction,4.40.5,1.0,280
+22,Sarah sees Keith,4.45.3,1.0,285
+23,Keith's revelation,5.20.1,1.0,320
+24,Barry introduction,5.48.1,1.0,348
+1,black screen --> cartoon,0.07.9,2.0,8
+2,car appears --> first motion & sounds,0.09.0,3.0,9
+3,"""keith reynolds can't make it tonight"" appears",0.17.5,1.0,18
+4,music starts,0.38.5,2.0,38
+5,narrator starts speaking,0.42.7,1.0,43
+6,off elevator onto floor with girl,1.01.5,3.0,62
+7,pans away from keith to bill from HR (as person is falling),1.25.3,1.0,85
+8,realize girl is in love with green guy,1.57.1,2.0,117
+9,realize keith is heading towards green guy and girl,2.12.3,2.0,132
+10,"noise stops, he sees them kissing",2.20.1,1.0,140
+11,first punch is thrown,3.08.6,1.0,189
+12,patrick is killed with briefcase,3.25.7,1.0,206
+13,ruth sees keith pulling dead guy,3.58.7,1.0,239
+14,sarah sees keith,4.47.5,1.0,288
+15,janitor notices keith on ladder,5.46.8,23.0,347
+1,Introduction,0.00.0,1.0,0
+2,Entering the Building,0.46.8,1.0,47
+3,Sarah,0.58.6,1.0,59
+4,Bill Calls Ambulance,1.21.8,1.0,82
+5,Keith Goes to Get Promotion,1.34.8,2.0,95
+6,Patrick Gets Promotion,1.48.9,2.0,109
+7,Keith is Let Down,1.58.4,1.0,118
+8,Ketih is Let Down: Part II,2.19.6,1.0,140
+9,Keith Insults Patrick,2.53.2,1.0,173
+10,Keith Kills Patrick,3.10.9,2.0,191
+11,Ruth Takes the Stairs,3.30.5,2.0,210
+12,Disposing the Body,3.42.7,1.0,223
+13,Ruth Faints,3.54.5,1.0,234
+14,The Ladder,4.20.0,2.0,260
+15,Sarah Faints,4.45.8,2.0,286
+16,Keith on the Ladder,5.21.4,1.0,321
+1,Beginning of movie,0.0.0,1.0,0
+2,Car drives to office building,0.7.7,1.0,8
+3,Title Screen,0.17.7,1.0,18
+4,Man exits car and goes to work,0.22.2,1.0,22
+5,Promotion Day explanation,0.44.2,2.0,44
+6,Interaction with Sarah,1.03.3,1.0,63
+7,Someone falls outside of the building,1.22.1,2.0,82
+8,Keith envisions promotion,1.35.3,2.0,95
+9,Introduction to Patrick,1.50.1,1.0,110
+10,Promotion does not go well,1.58.1,2.0,118
+11,Patrick tells Sarah,2.07.4,1.0,127
+12,Keith sees Patrick and Sarah,2.20.9,1.0,141
+13,Patrick and Keith in the elevator,2.43.7,2.0,164
+14,Patrick and Keith fight ,2.58.7,1.0,179
+15,Keith kills Patrick,3.24.7,1.0,205
+16,Introduction to Ruth,3.30.7,1.0,211
+17,Keith takes Patrick down the stairs,3.42.5,1.0,222
+18,Ruth sees Keith and falls/dies too,3.59.4,1.0,239
+19,Sarah wants to see Patrick,4.19.8,2.0,260
+20,Keith decides to go down the ladder,4.31.8,2.0,272
+21,Promotion manage plays game,4.40.8,1.0,281
+22,Sarah sees Keith and faints,4.45.0,2.0,285
+23,Keith climbs down the ladder,5.07.3,1.0,307
+24,Keith sees the janitor,5.39.1,1.0,339
