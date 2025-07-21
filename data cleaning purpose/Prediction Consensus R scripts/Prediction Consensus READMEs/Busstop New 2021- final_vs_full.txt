@@ -1,0 +1,5 @@
+During this 2nd run of prediction consensus, too many participants were collected for counterbalance 3 initially.
+
+Thus, the "full" folder contains code and use vectors that include these extra participants.
+
+The "final" folder is the one that will most likely be used for data analysis since it excludes extra participants in counterbalance 3. (After adding up the number of participants for both the old (2019) run/data and new (2021) run/data, the most recent participants exceeding 30 per counterbalance are considered extra.)

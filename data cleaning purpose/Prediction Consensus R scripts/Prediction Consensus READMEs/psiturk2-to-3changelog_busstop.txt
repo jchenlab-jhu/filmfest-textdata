@@ -1,0 +1,43 @@
+1. config.txt:
+
+	a. moved vars from [HIT Configuration] to [Task Parameters]
+		- contact_email_on_error
+		- browser_exclude_rule
+		- cutoff_time
+		- allow_repeats
+
+	b. renamed vars
+		- amt_keywords -> keywords 
+			# located under [Hit Configuration]
+		- launch_in_sandbox_mode -> launch_in_mode 
+			# located under [Shell Parameters]
+
+	c. added vars to [Server Parameters]
+		- login_username = 'Trythisusername'
+		- login_pw = 'Trythispw'
+		- secret_key = 'Trythissecretkey'
+
+		# no need to actually fill in any of these values
+
+2. custom.py: 
+
+	just replaced this with the custom.py provided in the new psiturk-example
+
+3. static/js/task.js:
+
+	found preloadPages() in code and replaced:
+
+	
+	psiTurk.preloadPages(pages); -> 
+
+	const init = (async () => {
+		await psiTurk.preloadPages(pages);
+	})()
+
+4. runtime.txt: 
+
+	edited python version:
+
+	python 2.7.15 -> python 3.8.5
+	
+

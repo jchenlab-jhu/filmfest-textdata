@@ -1,0 +1,376 @@
+##############################################################################
+#Project: Prediction_Probe (Online via Psiturk/MTurk; Present movie with probes where participants predict what will happen next)
+#Video: The Shoe (Film Fest)
+#Purpose: Merging old (2019) + new data (2021), figures and analyses
+#Date: July 24, 2023
+#Name: Buddhika Bellana, Anna Hu
+##############################################################################
+
+#########################
+#####load libraries######
+#########################
+library(plyr)
+library(ggplot2)
+library(stringi)
+library(stringr)
+library(lsa)
+library(hunspell)
+library(gganimate)
+library(dplyr)
+library(Hmisc)
+library(effsize)
+library(reshape2)
+library(rbin)
+
+#########################
+#######import data#######
+#########################
+
+##clear everything except the glove embedding dictionary
+rm(list=setdiff(ls(), c("g6b_300","glove.300")))
+
+#set working directory
+setwd("D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/Merged/theshoe")
+
+
+prediction_path <- "D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/Merged/theshoe/predictions/"
+dir.create(prediction_path, showWarnings = FALSE)
+figure_path <- "D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/Merged/theshoe/figures/"
+dir.create(figure_path, showWarnings = FALSE)
+cosmat_path <- "D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/Merged/theshoe/figures/cosmat/"
+dir.create(cosmat_path, showWarnings = FALSE)
+hist_path <- "D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/Merged/theshoe/figures/hist/"
+dir.create(hist_path, showWarnings = FALSE)
+
+clean_path <- "D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/Merged/theshoe/predictions/clean/"
+dir.create(clean_path, showWarnings = FALSE)
+raw_path <- "D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/Merged/theshoe/predictions/raw/"
+dir.create(raw_path, showWarnings = FALSE)
+
+#create additional directories
+new_theshoe_data <- "D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/New_2021/theshoe/predictions/clean/"
+dir.create(new_theshoe_data, showWarnings = FALSE)
+new_txtfiles_list <- list.files(new_theshoe_data)
+old_theshoe_data <- "D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/Old_2019/theshoe/predictions/clean/"
+dir.create(old_theshoe_data, showWarnings = FALSE)
+old_txtfiles_list <- list.files(new_theshoe_data)
+
+#########################
+###merge dataframes####
+#########################
+
+
+#check if list of old + new files match- throw error if not
+if (!identical(new_txtfiles_list,old_txtfiles_list)) {
+  stop("The list of text files between the old (2019) and new (2021) data folders do not match")
+} 
+
+#for each file
+for (i in 1:length(old_txtfiles_list)){
+  temp_old_data <- read.table(paste(old_theshoe_data, old_txtfiles_list[i], sep =""), sep = "\t", header = FALSE, quote = "")
+  temp_new_data <- read.table(paste(new_theshoe_data, old_txtfiles_list[i], sep =""), sep = "\t", header = FALSE, quote = "") 
+  temp_merged_data <- rbind(temp_old_data,temp_new_data)
+  
+  #not entirely sure what these two lines do (copied from export clean prediciton function)- ask Buddhika
+  df <- data.frame(matrix(unlist(temp_merged_data), nrow=length(temp_merged_data), byrow=TRUE),stringsAsFactors=FALSE) #turn list to data.frame
+  df <- as.data.frame(t(df)) #transpose
+  
+  write.table(df, file = paste0(clean_path, "merged_", old_txtfiles_list[i]), row.names=FALSE, col.names=FALSE, sep=" ", quote = FALSE) #save prediction column only, without row or column labels, to csv
+}
+
+#merge data frames
+setwd("D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/Old_2019/theshoe") #set wd to directory of old data
+old_df <- readRDS(file = "old_data.Rds")
+
+setwd("D:/PNB/Work/College/Research/Chen_Lab/Prediction Consensus Data/New_2021/theshoe") #set wd to directory of new data
+new_df <- readRDS(file = "new_data.Rds")
+
+prediction.data <- rbind(old_df, new_df)
+
+#define function to save all predictions in raw format
+export_raw_prediction <- function(df, phase){
+  write.csv(df, file = paste0(raw_path,"theshoe_merged_",phase,"_full.csv")) #save full dataframe to csv
+}
+
+export_raw_prediction(prediction.data, "test")
+
+##use USE (https://arxiv.org/abs/1803.11175) and tensorflow (https://www.tensorflow.org/tutorials) to get sentence-level embeddings 
+#path to python script: /Users/bbellan1/Dropbox/Academic/Projects/JHU/online_experiments//Users/bbellan1/Dropbox/Academic/Projects/JHU/online_experiments/prediction_probe/analysis_sandbox/theshoe/predictions
+
+##generate stop-specific full cosine similarity matrix
+#attach relevant libraries
+library(RColorBrewer)
+library(corrplot)
+library(ggrepel)
+#initialize empty lists
+cosmat.list<-list()
+cos.lowtri.list<-list()
+
+##################
+##USE timecourse##
+##################
+#load all USE csv files
+setwd(paste0(prediction_path,"use/"))
+temp = list.files(pattern="*.csv")
+use_list = lapply(temp, function(x) read.delim(x, header = FALSE, sep = ","))
+stacked_cosmat <- data.frame() #empty variable for stacked similarity matrices
+
+#reorder similarity matrix
+reorder_cormat <- function(cormat){
+  # Use correlation between variables as distance
+  dd <- as.dist((1-cormat)/2)
+  hc <- hclust(dd)
+  cormat <-cormat[hc$order, hc$order]
+}
+
+#loop through stop points in movie
+for(i in 1:length(use_list)){ #for all USE csv (i.e., each stop)
+  #generate cosine similarity matrix
+  cosmat.list[[i]] <- cosine(t(use_list[[i]]))
+  #also turn matrix into stacked df for ggplotting
+  if (i>2 & i<length(use_list)){ #if statement to avoid including the practice and title matrices, which are much larger than the rest
+    temp_df <- data.frame(reorder_cormat(cosmat.list[[i]])) #create temporary dataframe
+    colnames(temp_df) <- paste0("X",1:length(colnames(temp_df))) #label column names as X and an increasing integer
+    temp_df$variable1 <- paste0("X",1:length(rownames(temp_df))) #create a row name column with X and an increasing integer
+    temp_df$label <- as.character(stri_sub(stri_sub(temp[i],13),1,-5)); #add label to dataframe
+    stacked_cosmat <- rbind.fill(stacked_cosmat,temp_df) #stack matrices into a dataframe -- note rbind.fill adds NAs as required to rbind dfs that don't have the same number of columns
+  }
+  #plot correlation matrices for all free associate word embeddings
+  corrplot(reorder_cormat(cosmat.list[[i]]), type = "full", method = "color", col= colorRampPalette(c("dark blue","blue","white", "orange", "red"))(10), tl.pos = "n", tl.col = "black")
+  dev.print(pdf, paste0(figure_path,'cosmat/', stri_sub(stri_sub(temp[i],13),1,-5),'_cosmat.pdf'))
+  #select lower triangle of cosine similarity matrix
+  cos.lowtri.list[[i]] <- cosmat.list[[i]][lower.tri(cosmat.list[[i]], diag = FALSE)]
+  #save histogram
+  hist(cos.lowtri.list[[i]])
+  dev.print(pdf, paste0(figure_path,'hist/', stri_sub(stri_sub(temp[i],13),1,-5),'_hist.pdf'))
+}
+
+#take stacked similarity matrix dataframe and melt into long format 
+melt_cosmat <- melt(subset(stacked_cosmat,!label %in% c("practice_cAll_segA","practice_cAll_segB","test_cAll_segTitle")),id.vars = c("variable1","label"))
+melt_cosmat$variable = factor(melt_cosmat$variable, levels=unique(melt_cosmat$variable[order(as.numeric(stri_sub(stri_sub(melt_cosmat$variable,2),1,-1)))]), ordered=TRUE) #reorder the factor level based on segment and counterbalance
+melt_cosmat$variable1 = factor(melt_cosmat$variable1, levels=unique(melt_cosmat$variable1[order(as.numeric(stri_sub(stri_sub(melt_cosmat$variable1,2),1,-1)))]), ordered=TRUE) #reorder the factor level based on segment and counterbalance
+
+#melted dataframe is made, but now, order the stops to align with their occurrence in the movie
+#this is important for the multipanel similarity matrix plot
+melt_cosmat$temp <- stri_sub(stri_sub(melt_cosmat$label,6),1,-1) #create temp column with counterbalance + segment info
+melt_cosmat <- cbind(melt_cosmat,str_split_fixed(melt_cosmat$temp, "_", 2)) #separate counterbalance and segment into two columns
+melt_cosmat$temp <- NULL #delete the temp column
+names(melt_cosmat)[names(melt_cosmat)=="1"] <- "counterbalance" #rename counterbalance
+names(melt_cosmat)[names(melt_cosmat)=="2"] <- "segment" #rename segment
+melt_cosmat$segment<- as.numeric(stri_sub(stri_sub(melt_cosmat$segment,4),1,-1)) #clean up segment
+melt_cosmat$counterbalance <- as.factor(as.numeric(stri_sub(stri_sub(melt_cosmat$counterbalance,2),1,-1))) #clean up counterbalance
+melt_cosmat$counterbalance <- factor(melt_cosmat$counterbalance, levels = c("1","2","3","4","5","0")) #reorder factor levels 
+melt_cosmat$label = factor(melt_cosmat$label, levels=unique(melt_cosmat$label[order(melt_cosmat$segment,melt_cosmat$counterbalance)]), ordered=TRUE) #reorder the factor level based on segment and counterbalance
+
+#plot matrices of USE similarity for entire movie
+ggplot(data = melt_cosmat, aes(x=variable, y=variable1, fill=value)) + 
+  facet_wrap(~ label) + 
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_blank(), axis.line.y = element_blank(), plot.title = element_text(size=18), axis.text.x=element_blank(), axis.ticks.x=element_blank(), axis.text.y=element_blank(),axis.ticks.y=element_blank(), axis.title.x=element_blank(), axis.title.y=element_blank()) +
+  geom_tile() +
+  scale_fill_gradientn(colours = c("green", "yellow", "red"),
+                       values = scales::rescale(c(0, .45, .5, .55, 1)), na.value = "white", name = "Cosine") +
+  labs(title="Cosine Similarity: USE in The Shoe", size = 20)
+ggsave(paste0(figure_path,"theshoe_use_cosmat.pdf"), scale = 2)
+
+#generate dataframe of pairwise USE similarity estimates per stop in movie
+df <- t(plyr::ldply(cos.lowtri.list, rbind)) #list to dataframe
+colnames(df) <- stri_sub(stri_sub(temp,13),1,-5) #rename columns
+df <- df[,4:ncol(df)-1] #remove practice and title screen
+df <- melt(df) #wide to long, for ggplot
+df <- subset(df, select= c(Var2,value))
+names(df)[names(df)=="value"] <- "similarity" #rename value
+names(df)[names(df)=="Var2"] <- "prediction_stop" #rename variable
+
+#dataframe is made, but now, order the stops to align with their occurrence in the movie
+#this is important for the multipanel histogram plot
+df$temp <- stri_sub(stri_sub(df$prediction_stop,6),1,-1) #create temp dataframe with counterbalance + segment info
+df <- cbind(df,str_split_fixed(df$temp, "_", 2)) #separate counterbalance and segment into two columns
+df$temp <- NULL #delete the temp column
+names(df)[names(df)=="1"] <- "counterbalance" #rename counterbalance
+names(df)[names(df)=="2"] <- "segment" #rename segment
+df$segment <- as.numeric(stri_sub(stri_sub(df$segment,4),1,-1)) #clean up segment
+df$counterbalance <- as.factor(as.numeric(stri_sub(stri_sub(df$counterbalance,2),1,-1))) #clean up counterbalance
+df$counterbalance <- factor(df$counterbalance, levels = c("1","2","3","4","5","0")) #reorder factor levels 
+df$label = factor(df$prediction_stop, levels=unique(df$prediction_stop[order(df$segment,df$counterbalance)]), ordered=TRUE) #reorder the factor level based on segment and counterbalance
+
+#plot histograms of USE similarity for entire movie
+ggplot(data=df, aes(similarity)) +
+  facet_wrap(~ label) + 
+  geom_histogram(aes(fill =..count..,y=..count..), 
+                 breaks=seq(0, 1, by = .1), 
+                 col="red") + 
+  scale_fill_gradient("Count", low = "green", high = "red") +
+  geom_vline(data = ddply(df, "label", summarise, label.mean = mean(similarity,na.rm=TRUE)), aes(xintercept = label.mean),col='black',size=.5,linetype="dashed") +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(color="black", size = 1), axis.line.y = element_line(colour="black", size = 1), plot.title = element_text(size=18)) +
+  labs(title="Histogram: USE similarity in The Shoe", size = 20) +
+  labs(x="Similarity", y="Count")
+ggsave(paste0(figure_path,"theshoe_use_histogram.pdf"), scale = 2)
+
+#calculate mean cosine similarity at each stop in movie
+use.data <- lapply(cos.lowtri.list, mean) #calculate mean cosine similarity from lower triangle
+use.data  <- as.data.frame(plyr::ldply(use.data , rbind)) #list to dataframe
+names(use.data) <- c("similarity") #rename column
+use.data$label <- NA #create temporary values for column
+for (i in 1:length(use_list)){
+  use.data$label[i] <- stri_sub(stri_sub(temp[i],13),1,-5) #add label
+}
+use.data <- within(use.data, {
+  counterbalance = ifelse(grepl("c0", use.data$label), "0", ifelse(grepl("c1", use.data$label), "1", ifelse(grepl("c2", use.data$label), "2", ifelse(grepl("c3", use.data$label), "3", ifelse(grepl("c4", use.data$label), "4", ifelse(grepl("c5", use.data$label), "5", ifelse(grepl("cAll", use.data$label), NA, "ERROR"))))))) #add counterbalance
+})
+use.data <- within(use.data, {
+  segment = ifelse(grepl("seg10", use.data$label), "10", ifelse(grepl("seg11", use.data$label), "11", ifelse(grepl("seg12", use.data$label), "12", ifelse(grepl("seg2", use.data$label), "2", ifelse(grepl("seg3", use.data$label), "3", ifelse(grepl("seg4", use.data$label), "4", ifelse(grepl("seg5", use.data$label), "5", ifelse(grepl("seg6", use.data$label), "6", ifelse(grepl("seg7", use.data$label), "7", ifelse(grepl("seg8", use.data$label), "8", ifelse(grepl("seg9", use.data$label), "9", ifelse(grepl("seg1", use.data$label), "1", ifelse(grepl("segA", use.data$label), "A", ifelse(grepl("segB", use.data$label), "B", ifelse(grepl("segTitle", use.data$label), "Title", "ERROR"))))))))))))))) #define segment
+})
+#create a temporary value where counterbalance and segment are concatenated
+prediction.data$temp <- paste0(prediction.data$counterbalance, prediction.data$video_segment)
+use.data$temp <- paste0(use.data$counterbalance, use.data$segment)
+#match this concatenated value across datasets to get offset values
+use.data$offset<- with(prediction.data, offset[match(use.data$temp, temp)])
+use.data$offset[use.data$temp == "NATitle"] <- 3 #relabel offset for title screen
+use.data <- subset(use.data, !(temp %in% c("01", "21", "31", "41", "51","NAA","NAB"))) #remove unnecessary datapoints
+use.data$temp2 <- paste0(use.data$counterbalance, use.data$offset)
+
+#calculate number of predictions per stop
+use.data.n <- lapply(cosmat.list, function(x) sqrt(length(x))) #calculate number of predictions per stop
+use.data.n  <- as.data.frame(plyr::ldply(use.data.n , rbind)) #list to dataframe
+names(use.data.n) <- c("n") #rename column
+use.data.n$label <- NA #create temporary values for column
+for (i in 1:length(use_list)){
+  use.data.n$label[i] <- stri_sub(stri_sub(temp[i],13),1,-5) #add label
+}
+
+#calculate SD across predictions per stop
+use.data.sd <- lapply(cosmat.list, sd) #calculate number of predictions per stop
+use.data.sd <- as.data.frame(plyr::ldply(use.data.sd , rbind)) #list to dataframe
+names(use.data.sd) <- c("sd") #rename column
+use.data.sd$label <- NA #create temporary values for column
+for (i in 1:length(use_list)){
+  use.data.sd$label[i] <- stri_sub(stri_sub(temp[i],13),1,-5) #add label
+}
+
+#calculate standard error
+use.data$sd <- with(use.data.sd, sd[match(use.data$label, label)]) #match sd and add to df
+use.data$n <- with(use.data.n, n[match(use.data$label, label)]) #match n and add to df
+use.data$se <- use.data$sd/sqrt(use.data$n) #calculate se
+rm(use.data.sd, use.data.n) #remove unnecessary dataframes
+
+#plot average cosine similarity between USE embeddings for predictions at each stop
+ggplot(data=use.data, aes(x=offset, y=similarity)) +
+  geom_errorbar(aes(ymin=similarity-se, ymax=similarity+se), width=.1, linetype=5, alpha=.4) +
+  geom_line(size=1) + 
+  geom_point(aes(colour=counterbalance),size=2) + 
+  theme(text=element_text(size=18),panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(color="black", size = 1), axis.line.y = element_line(colour="black", size = 1)) +
+  xlab("time (s)") + ylab("cosine similarity") + ylim(-.1, .8)
+ggsave(paste0(figure_path,"theshoe_use_timecourse.tiff"), dpi = 300, scale = 1)
+ggsave(paste0(figure_path,"theshoe_use_timecourse.png"), dpi = 300, scale = 1)
+
+#plot average cosine similarity between USE embeddings for predictions at each stop
+ggplot(data=use.data, aes(x=offset, y=similarity)) +
+  geom_errorbar(aes(ymin=similarity-se, ymax=similarity+se), width=.1, linetype=5, alpha=.4) +
+  geom_line(size=1) + 
+  geom_point(aes(colour=counterbalance),size=2) + 
+  geom_text_repel(aes(label = use.data$n, size = NULL)) +
+  theme(text=element_text(size=18),panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(color="black", size = 1), axis.line.y = element_line(colour="black", size = 1)) +
+  xlab("time (s)") + ylab("cosine similarity") + ylim(-.1, .8)
+ggsave(paste0(figure_path,"theshoe_use_timecourse_labelled.png"), dpi = 300, scale = 1)
+
+#plot confidence
+#z-score confidence ratings by subject
+temp.conf <- ddply(subset(prediction.data,phase=="test"), ~ID, summarise, mean = mean(confidence), sd = sd(confidence), se = sd/sqrt(length(unique(prediction.data$ID))))
+temp.conf2 <- ddply(subset(prediction.data,phase=="test"), ~ID + offset, summarise, mean = mean(confidence))
+temp.conf2$sub.mean <- with(temp.conf, mean[match(temp.conf2$ID, ID)]) 
+temp.conf2$sub.sd <- with(temp.conf, sd[match(temp.conf2$ID, ID)]) 
+temp.conf2$z <- (temp.conf2$mean - temp.conf2$sub.mean)/temp.conf2$sub.sd
+
+#average all z-scored confidence ratings per offset
+confidence.data <- ddply(temp.conf2, ~offset, summarise, z_mean = mean(z, na.rm=TRUE), z_sd = sd(z, na.rm=TRUE)) #average per stop
+confidence.data$counterbalance <- with(prediction.data, counterbalance[match(confidence.data$offset, offset)]) #get matching counterbalance
+confidence.data$counterbalance[confidence.data$offset == 3] <- NA
+confidence.data$temp2 <- paste0(confidence.data$counterbalance, confidence.data$offset) #create a tag for matching
+confidence.data$n <- with(use.data, n[match(confidence.data$temp2, temp2)]) #get number of predictions per stop
+confidence.data$z_se <- confidence.data$z_sd/sqrt(confidence.data$n) #calculate se 
+
+ggplot(data=confidence.data, aes(x=offset, y=z_mean)) +
+  geom_errorbar(aes(ymin=z_mean-z_se, ymax=z_mean+z_se), width=.1, linetype=5, alpha=.4) +
+  geom_line(size=1) + 
+  geom_point(aes(colour=counterbalance),size=2) + 
+  theme(text=element_text(size=18),panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(color="black", size = 1), axis.line.y = element_line(colour="black", size = 1)) +
+  xlab("time (s)") + ylab("confidence (z)") + ylim(-1.1, 1.5)
+ggsave(paste0(figure_path,"theshoe_confidence_timecourse.tiff"), dpi = 300, scale = 1)
+ggsave(paste0(figure_path,"theshoe_confidence_timecourse.png"), dpi = 300, scale = 1)
+
+ggplot(data=confidence.data, aes(x=offset, y=z_mean)) +
+  geom_errorbar(aes(ymin=z_mean-z_se, ymax=z_mean+z_se), width=.1, linetype=5, alpha=.4) +
+  geom_line(size=1) + 
+  geom_point(aes(colour=counterbalance),size=2) + 
+  geom_text_repel(aes(label = use.data$n, size = NULL)) +
+  theme(text=element_text(size=18),panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(color="black", size = 1), axis.line.y = element_line(colour="black", size = 1)) +
+  xlab("time (s)") + ylab("confidence (z)") + ylim(-1.1, 1.5)
+ggsave(paste0(figure_path,"theshoe_confidence_timecourse_labelled.png"), dpi = 300, scale = 1)
+
+#correlate confidence with USE cosine similarity
+use.data$offset <- as.numeric(use.data$offset) #change offset to numeric
+use.data <- use.data[order(use.data$offset),] #order by offset
+confidence.data$offset <- as.numeric(confidence.data$offset) #change offset to numeric
+confidence.data <- confidence.data[order(confidence.data$offset),] #order by offset
+cor.test(confidence.data$z_mean, use.data$similarity) #run correlation test
+
+##upsample USE and confidence timecourses to fMRI timecourse
+#spline for use
+use.spline.interp <- spline(use.data$offset, use.data$similarity, method="natural", n=100000, xmin=0, xmax=665)
+use.spline.interp <- data.frame(matrix(unlist(use.spline.interp), nrow=length(use.spline.interp), byrow=TRUE),stringsAsFactors=FALSE) #turn list to data.frame
+use.spline.interp <- data.frame(matrix(unlist(use.spline.interp), nrow=length(use.spline.interp), byrow=TRUE),stringsAsFactors=FALSE) #go long from wide
+names(use.spline.interp) <- c("offset", "similarity") #rename column
+
+#spline for confidence
+conf.spline.interp <- spline(confidence.data$offset, confidence.data$z_mean, method="natural", n=100000, xmin=0, xmax=665)
+conf.spline.interp <- data.frame(matrix(unlist(conf.spline.interp), nrow=length(conf.spline.interp), byrow=TRUE),stringsAsFactors=FALSE) #turn list to data.frame
+conf.spline.interp <- data.frame(matrix(unlist(conf.spline.interp), nrow=length(conf.spline.interp), byrow=TRUE),stringsAsFactors=FALSE) #turn list to data.frame
+names(conf.spline.interp) <- c("offset", "confidence") #rename column
+
+#build a vector representing each TR, in seconds, for the theshoe movie
+tr <- as.data.frame(seq(from = 0, to = 135, by = 1.5))
+names(tr) <- c("s") #rename column
+
+#load MALDIquant for match.closest function
+library(MALDIquant)
+
+#loop through TRs to find corresponding offsets in the interpolated timecourse
+for (i in 1:length(tr$s)){
+  tr$position_match[i] <- match.closest(tr$s[i], use.spline.interp$offset, tolerance = Inf, nomatch = 0000) #find matching offsets
+  tr$similarity[i] <- use.spline.interp$similarity[tr$position_match[i]] #find corresponding similarity estimates 
+  tr$confidence[i] <- conf.spline.interp$confidence[tr$position_match[i]] #find corresponding confidence estimates 
+}
+#export as csv
+write.csv(tr, file = paste0(prediction_path,"theshoe_full_interp_tr_match.csv")) #save full dataframe to csv
+df.use <- subset(tr, select = similarity)
+df.use <- df.use[16:length(t(df.use))-1,] #remove first 14 trs (to deal with an intial transient in the BOLD data) + AND remove trim the last TR (overlaps with subsequent movie)
+write.table(df.use, file = paste0(prediction_path,"theshoe_use_tr_match.csv"), row.names=FALSE, col.names=FALSE, sep=",", quote = FALSE) #save prediction column only, without row or column labels, to csv
+write.table(df.use, file = paste0(prediction_path,"theshoe_use_tr_match.txt"), row.names=FALSE, col.names=FALSE, sep=" ", quote = FALSE) #save prediction column only, without row or column labels, to txt
+df.conf <- subset(tr, select = confidence)
+df.conf <- df.conf[16:length(t(df.conf))-1,] #remove first 14 trs (to deal with an intial transient in the BOLD data) + AND remove trim the last TR (overlaps with subsequent movie)
+write.table(df.conf, file = paste0(prediction_path,"theshoe_conf_tr_match.csv"), row.names=FALSE, col.names=FALSE, sep=",", quote = FALSE) #save prediction column only, without row or column labels, to csv
+write.table(df.conf, file = paste0(prediction_path,"theshoe_conf_tr_match.txt"), row.names=FALSE, col.names=FALSE, sep=" ", quote = FALSE) #save prediction column only, without row or column labels, to txt
+
+#double check correlation between confidence and use similarity
+#so long as everything worked properly:
+#should show similar magnitude (r values) to original correlation 
+cor.test(tr$confidence, tr$similarity) #run correlation test
+
+#plot TR rate estimates 
+#for use cosine similarity
+ggplot(data=tr, aes(x=s, y=similarity)) +
+  geom_line(size=1) + 
+  geom_point(size=2) + 
+  theme(text=element_text(size=18),panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(color="black", size = 1), axis.line.y = element_line(colour="black", size = 1)) +
+  xlab("time (s)") + ylab("cosine similarity") + ylim(.2, .7)
+ggsave(paste0(figure_path,"theshoe_use_upsampled_timecourse.tiff"), dpi = 300, scale = 1)
+
+
+#for confidence
+ggplot(data=tr, aes(x=s, y=confidence)) +
+  geom_line(size=1) + 
+  geom_point(size=2) + 
+  theme(text=element_text(size=18),panel.grid.major = element_blank(), panel.grid.minor = element_blank(), panel.background = element_blank(), axis.line.x = element_line(color="black", size = 1), axis.line.y = element_line(colour="black", size = 1)) +
+  xlab("time (s)") + ylab("confidence (z)") + ylim(-1, 1)
+ggsave(paste0(figure_path,"theshoe_confidence_upsampled_timecourse.tiff"), dpi = 300, scale = 1)
+
